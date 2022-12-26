@@ -1,8 +1,8 @@
 import { storeData, getStoreData } from '../storage/projectAsyncStorage';
 import React, { useState } from 'react';
 import { SafeAreaView, Text, View, } from 'react-native';
-
-const HomeScreen = (props, { navigation }) => {
+import Button from '../Button';
+const HomeScreen = (props) => {
   // alert(props.route.params.isSuccess)
 
   
@@ -26,13 +26,13 @@ const HomeScreen = (props, { navigation }) => {
     }
   };
 
-  /*   const logout = () => {
+    const logout = () => {
       storeData(
         'userData',
-        JSON.stringify({...userDetails, loggedIn: false}),
+        ({...userDetails, loggedIn: false}),
       );
-      navigation.navigate('Login');
-    }; */
+      props.navigation.navigate('Login');
+    };
 
   return (<>
     <View
@@ -45,7 +45,7 @@ const HomeScreen = (props, { navigation }) => {
       <Text style={{ fontSize: 20, fontWeight: 'bold', color: '#000' }}>
        Welcome {userDetails?.productname}
       </Text>
-      {/*  <Button text="Logout" onPress={logout} /> */}
+       <Button text="Logout" onPress={logout} />
     </View>
   </>
   )
