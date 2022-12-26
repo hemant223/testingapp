@@ -20,7 +20,7 @@ const styles = StyleSheet.create({
 });
 
 export default function Login({ navigation }) {
-    const [inputs, setInputs] = React.useState({ email: '', password: '' });
+    const [inputs, setInputs] = React.useState({ productid: '', pro: '' });
     const [errors, setErrors] = React.useState({});
 
 
