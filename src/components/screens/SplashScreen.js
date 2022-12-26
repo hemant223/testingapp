@@ -7,13 +7,14 @@ const SplashScreen = (props) => {
     // const [number, setNumber] = useState()
     const getDataofAsync = async () => {
         const userData = await getStoreData('userData');
-        
+
         // alert(JSON.stringify(data))
         if (userData) {
             if (userData.loggedIn) {
                 props.navigation.navigate('HomeScreen', /* {isSuccess:true}*/);
             }
             else {
+                
                 props.navigation.navigate('Login')
             }
         }
