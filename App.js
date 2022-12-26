@@ -8,7 +8,9 @@ import Registration from './src/components/screens/Registration';
 import SplashScreen from './src/components/screens/SplashScreen';
 export default function App() {
   const Stack = createNativeStackNavigator()
-  const [initialRouteName, setInitialRouteName] = useState('');
+
+  
+  /* const [initialRouteName, setInitialRouteName] = useState('');
 
   useEffect(function () {
     authUser()
@@ -30,9 +32,9 @@ export default function App() {
     }
 
 
-  } 
-    console.log('initialRouteNameeeeeee',typeof initialRouteName)
-     alert(initialRouteName)
+  }  */
+    // console.log('initialRouteNameeeeeee',typeof initialRouteName)
+     //alert(initialRouteName)
   return (
     <NavigationContainer>
       <Stack.Navigator
