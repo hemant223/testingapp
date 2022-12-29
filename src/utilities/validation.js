@@ -1,5 +1,4 @@
 import { Keyboard } from "react-native";
-import AsyncStorage from "@react-native-async-storage/async-storage";
 import { storeData } from "../components/storage/projectAsyncStorage";
 export function validate(checkedFb, checkedInsta, checkedWhatsapp, handleError, inputs, typeValue, statusValue, setSelectErr, setSelectErr1, navigation) {
   Keyboard.dismiss();
@@ -39,7 +38,7 @@ export function validate(checkedFb, checkedInsta, checkedWhatsapp, handleError, 
     handleError('No special character allowed', 'productkey');
     isValid = false;
   }
-  // alert(inputs.gender)
+
   if (!inputs.gender) {
     handleError('Please Select Gender', 'gender');
     isValid = false;
@@ -64,15 +63,12 @@ export function validate(checkedFb, checkedInsta, checkedWhatsapp, handleError, 
 
   inputs['typeValue'] = typeValue
   inputs['statusValue'] = statusValue
-
- 
   inputs['social'] = `${checkedFb} ${checkedInsta} ${checkedWhatsapp}`
-  console.log('genddddddddererer', inputs.gender)
+
 
   if (isValid) {
     storeData('userData', inputs)
     navigation.navigate('Login')
     console.log('eeeeee', inputs)
-    // alert("(" + inputs.productid + " " + inputs.productname + " " + inputs.rate + " " + inputs.offer + " " + inputs.productkey + " " + typeValue + " "+statusValue+ ") " + "All values are in my hand");
   }
 };

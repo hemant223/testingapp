@@ -43,7 +43,7 @@ const HomeScreen = (props) => {
         paddingHorizontal: 40,
       }}>
       <Text style={{ fontSize: 20, fontWeight: 'bold', color: '#000' }}>
-       Welcome {userDetails?.productname}
+       Welcome  {userDetails?.productname}
       </Text>
        <Button text="Logout" onPress={logout} />
     </View>

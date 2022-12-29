@@ -1,7 +1,6 @@
 import React from 'react';
 import {View, Text, StyleSheet,Dimensions} from 'react-native';
 import COLORS from '../assets/colors';
-import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 import DropDownPicker from 'react-native-dropdown-picker';
 const width = Dimensions.get('window').width;
 const DropDown = ({
@@ -10,7 +9,6 @@ const DropDown = ({
   label,
   placeholder,
   setDropValue,
-  
   // onFocus = () => {},
 }) => {
  
@@ -42,7 +40,6 @@ const DropDown = ({
     disabledStyle={{
       opacity: 0.9
     }}
-    
     
      onFocus={() => {
        onFocus();

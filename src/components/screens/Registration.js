@@ -17,6 +17,7 @@ const Registration = ({ navigation }) => {
     offer: '',
     productkey: '',
     gender: '',
+    
   });
   const [errors, setErrors] = React.useState({});
 
@@ -26,12 +27,11 @@ const Registration = ({ navigation }) => {
 
   const [statusValue, setStatusValue] = useState('')
   const [selectErr1, setSelectErr1] = useState('')
-
+  
   const [checkedWhatsapp, setCheckedWhatsapp] = React.useState('');
   const [checkedFb, setCheckedFb] = React.useState('');
   const [checkedInsta, setCheckedInsta] = React.useState('');
   
-    console.log('Inputssssssss', inputs)
  // console.log('social', checkedFb, checkedInsta, checkedWhatsapp)
  
   useEffect(() => {
@@ -85,11 +85,11 @@ const Registration = ({ navigation }) => {
   
     <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center', backgroundColor: '#487eb0' }}>
 
-      <View style={{ backgroundColor: '#487eb0', width: width * 0.90 }}>
-        <Text style={{ fontSize: 30, fontWeight: '700', letterSpacing: 3, color: '#ffff' }}>Products Details</Text>
-      </View>
-      <ScrollView>
-        <View style={{ marginVertical: 5, padding: 20, width: width * 0.9, backgroundColor: '#fff' }}>
+    <View style={{ backgroundColor: '#487eb0', width: width * 0.90 }}>
+      <Text style={{ fontSize: 30, fontWeight: '700', letterSpacing: 3, color: '#ffff' }}>Products Details</Text>
+    </View>
+    <ScrollView>
+      <View style={{ marginVertical: 5, padding: 20, width: width * 0.9, backgroundColor: '#fff' }}>
           <Input
             keyboardType="numeric"
             onChangeText={text => handleOnchange(text, 'productid')}
@@ -174,10 +174,10 @@ const Registration = ({ navigation }) => {
 
           <Button bordered color='#487eb0' text="Register" type='filled' onPress={() => validate(checkedFb, checkedInsta, checkedWhatsapp, handleError, inputs, typeValue, statusValue, setSelectErr, setSelectErr1, navigation)} />
 
-        </View>
+          </View>
 
-      </ScrollView>
-    </View>
+</ScrollView>
+</View>
   );
 }
 export default Registration
