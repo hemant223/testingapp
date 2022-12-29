@@ -1,13 +1,10 @@
-import { View, Text } from 'react-native';
+import { View, Text,Image } from 'react-native';
 import React, { useEffect } from 'react';
 import { getStoreData } from '../storage/projectAsyncStorage';
 
 const SplashScreen = (props) => {
-
-    // const [number, setNumber] = useState()
-    const getDataofAsync = async () => {
+    const authUser = async () => {
         const userData = await getStoreData('userData');
-
         // alert(JSON.stringify(data))
         if (userData) {
             if (userData.loggedIn) {
@@ -24,13 +21,16 @@ const SplashScreen = (props) => {
     }
 
     useEffect(() => {
-        getDataofAsync();
+        setTimeout(() => {
+            authUser();
+        }, 5000);
     }, [])
-
+    
+    
 
     return (
-        <View>
-            <Text>Spalsh Screen</Text>
+        <View style={{flex:1,justifyContent:'center',alignItems:'center',backgroundColor:'#fff'}}>
+            <Image style={{width:500,height:500}} source={require('../../assets/images/loading.gif')}/>
         </View>
     )
 }

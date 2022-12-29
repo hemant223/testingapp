@@ -6,8 +6,7 @@ import Gender from 'react-native-vector-icons/FontAwesome';
 
 const Radiobutton = ({inputs,setInputs,error, label,onFocus = () => { }}) => {
 
-  //alert(JSON.stringify(props.inputs))
-  const [isFocused, setIsFocused] = React.useState(false);
+ 
   return (
     <View style={{ marginBottom: 10 }}>
     <Text style={style.label}>{label}</Text>
@@ -22,7 +21,7 @@ const Radiobutton = ({inputs,setInputs,error, label,onFocus = () => { }}) => {
             value="male"
             status={inputs.gender === 'male' ? 'checked' : 'unchecked'}
             onPress={() => {onFocus();
-              setIsFocused(true); setInputs((prev) => ({ ...prev, ['gender']: 'male' })) }}
+              setInputs((prev) => ({ ...prev, ['gender']: 'male' })) }}
           />
         </View>
         <View style={{ flexDirection: 'row', alignItems: 'center', marginLeft: 20 }}>
